@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login
 from django.contrib.auth.forms import AuthenticationForm
 from .models import BlogPost
 from .forms import BlogPostForm, UserRegistrationForm
@@ -81,5 +81,5 @@ def post_detail(request, post_id):
 
 
 def logout_user(request):
-    logout(request)  # This will log the user out and clear their session
+    logout(request)
     return redirect('home') 
